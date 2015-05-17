@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en" xml:lang="en" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+{% block head %}
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Your Store</title>
+<meta property="og:image" content="images/dummy/pic_1.jpg" />
+<meta name="description" content="My Store" />
+
+<link rel="stylesheet" type="text/css" href="../static/stylesheet/960.css" media="all" />
+<link rel="stylesheet" type="text/css" href="../static/stylesheet/screen.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="../static/stylesheet/color.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="../static/stylesheet/prettyPhoto.css" media="all" />
+<!--[if lt IE 9]>
+<link rel="stylesheet" type="text/css" href="stylesheet/ie.css" media="screen" />
+<![endif]-->
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../static/js/jquery/jquery.prettyPhoto.js"></script>
+<script type="text/javascript" src="../static/js/shoppica.js"></script>
+<script type="text/javascript">
+
+
+$(document).ready(function() {
+
+  $(".s_tabs").tabs({ fx: { opacity: 'toggle', duration: 300 } });
+
+  $("#product_images a[rel^='prettyPhoto'], #product_gallery a[rel^='prettyPhoto']").prettyPhoto({
+    theme: 'light_square',
+    opacity: 0.5
+  });
+
+});
+
+</script>
+{% endblock %}
+</head>
+
+<body class="s_layout_fixed">
+{%block header%}
+<div id="wrapper"> 
+  
+  <!-- ********************** --> 
+  <!--      H E A D E R       --> 
+  <!-- ********************** --> 
+  <div id="header" class="container_12">
+    <div class="grid_12">
+    
+    	<a id="site_logo" href="{{index_uri}}">{{site_label}}</a> 
+
+      <div id="system_navigation" class="s_nav">
+        <ul class="s_list_1 clearfix">
+			{%for uri in uris%}
+          <li><a href="{{uri.link}}">{{uri.name}}</a></li>
+        </ul>
+      </div>
+
+      
+      <div id="categories" class="s_nav">
+        <ul>
+
+			{%for element in menu %}
+          <li id="menu_home"> <a href="{{element.uri}}">{{element.name}}</a> </li>
+			{%endfor%}
+        </ul>
+      </div>
+
+    </div>
+  </div>
+  <!-- end of header --> 
+  {% endheader %}
+
+  <!-- ********************** --> 
+  <!--     I N T R O          -->
+  <!-- ********************** --> 
+
+  <div id="intro">
+    <div id="intro_wrap">
+      <div class="container_12">
+        <div id="breadcrumbs" class="grid_12">
+          <a href="">Home</a>
+          &gt;
+          <a href="">Clothing</a>
+        </div>
+        <h1>Clothing</h1>
+      </div>
+    </div>
+  </div>
+  <!-- end of intro -->
+
+  
+  <!-- ********************** --> 
+  <!--      C O N T E N T     -->
+  <!-- ********************** --> 
+  {% block content %}
+
+  {% endblock %}
+  <!-- ********************** --> 
+  <!--      F O O T E R       --> 
+  <!-- ********************** --> 
+  <div id="footer" class="container_12">
+    
+    <p id="copy">&copy; Copyright 2011. Powered by <a class="blue" href="">Open Cart</a>.<br /> <a class="s_main_color" href="http://www.shoppica.net">Shoppica theme</a> made by <a href="http://www.themeburn.com">ThemeBurn.com</a></p>
+  </div>
+  <!-- end of FOOTER --> 
+  
+</div>
+
+<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({appId: '0c18007de6f00f7ecda8c040fb76cd90', status: true, cookie: true,
+     xfbml: true});
+  };
+  (function() {
+    var e = document.createElement('script'); e.async = true;
+    e.src = document.location.protocol +
+    '//connect.facebook.net/en_US/all.js';
+    document.getElementById('fb-root').appendChild(e);
+  }());
+</script>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+{% extends "base.html.jinja2" %}
+  <!-- ********************** --> 
+  <!--      C O N T E N T     --> 
+  <!-- ********************** --> 
+{%block content%}
+  <div id="content" class="container_16">
+  
+
+     <div class="grid_8 omega">
+        <h2 class="s_title_1"><span class="s_secondary_color">Register</span> user</h2>
+
+        <div class="clear"></div>
+        <form id="login" action="/login" method="post">
+          <div class="s_row_3 clearfix">
+            
+            <br />
+            <label><strong>Login:</strong></label>
+            <input type="text" size="35" class="required email" />
+            <br />
+            <br />
+            <label><strong>Password:</strong></label>
+            <input type="password" size="35" class="required" />
+            <br />
+          </div>
+          <span class="clear border_ddd"></span>
+          <br />
+          
+          <button class="s_button_1 s_main_color_bgr" type="submit"><span class="s_text">Register</span></button>
+        </form>
+      </div>
+
+
+      <div class="grid_8 omega">
+        <h2 class="s_title_1"><span class="s_secondary_color">Login</span> User</h2>
+
+        <div class="clear"></div>
+        <form id="login" action="login" method="post">
+          <div class="s_row_3 clearfix">
+            
+            <br />
+            <label><strong>Login:</strong></label>
+            <input type="text" size="35" name="login" class="required email" />
+            <br />
+            <br />
+            <label><strong>Password:</strong></label>
+            <input type="password" size="35" name="password" class="required" />
+            <br />
+          </div>
+          <span class="clear border_ddd"></span>
+          <br />
+          
+          <button class="s_button_1 s_main_color_bgr" name="form.submitted" type="submit"><span class="s_text">Login</span></button>
+        </form>
+      </div>
+
+      <div class="clear"></div>
+
+    </div>
+    
+  </div>
+  <!-- end of content --> 
+  
+ {%endblock%}

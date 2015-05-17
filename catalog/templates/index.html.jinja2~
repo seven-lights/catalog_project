@@ -1,0 +1,56 @@
+{% extends "base.html.jinja2" %}
+
+{%block intro%}
+  <!-- ********************** --> 
+  <!--     I N T R O          --> 
+  <!-- ********************** --> 
+ <!-- <div id="intro">
+    <div id="intro_wrap">
+      <div id="product_intro" class="container_12">
+        <div id="product_intro_info" class="grid_5">
+			{% for product in main_products %}
+          <div style="position: relative;">
+            <h2><a href="{{product.uri}}">{{product.name}}</a></h2>
+            <div class="s_rating_holder">
+              <p class="s_rating s_rating_big s_rating_5"> <span style="width: 60%;" class="s_percent"></span> </p>
+            <p class="s_desc"> {{product.description}}</p>
+            <div class="s_price_holder">
+              <p class="s_price"> <span class="s_currency s_before">$</span>{{product.price}} </p>
+            </div>
+				</div>
+          </div>
+         {%endfor%}
+        </div>
+        <div id="product_intro_preview">
+          <div class="slides_container">
+				{% for product in main_products %}
+            <div class="slideItem" style="display: none"><a href="{{product.uri}}"><img src="{{product.image}}" alt="" /></a></div>
+            {% endfor %}
+          </div>
+          <a class="s_button_prev" href="javascript:;"></a>
+          <a class="s_button_next" href="javascript:;"></a>
+        </div>
+      </div>
+    </div>592,856
+  </div> -->
+	<script type="text/javascript" src="js/jquery/jquery.slides.js"></script> 
+  <script type="text/javascript" src="js/shoppica.products_slide.js"></script>
+  <!-- end of intro --> 
+  {%endblock%}
+  {%block content%}
+  <!-- ********************** --> 
+  <!--      C O N T E N T     --> 
+  <!-- ********************** --> 
+  <div id="content" class="container_12">
+  
+    <div id="welcome" class="grid_12">
+      {{wolcome_message}}
+    </div>
+    
+    <div class="clear"></div>
+    
+    
+    
+  </div>
+  <!-- end of content --> 
+  {%endblock%}

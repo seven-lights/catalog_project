@@ -1,0 +1,82 @@
+{% extends "base.html.jinja2" %}
+  
+  <!-- ********************** --> 
+  <!--      C O N T E N T     -->
+  <!-- ********************** --> 
+{% block content %}
+{{super()}}
+  <div id="content" class="product_view container_12">
+
+    <div id="product" class="grid_12">
+      <div id="product_images" class="grid_4 alpha">
+      	<a id="product_image_preview" rel="prettyPhoto[gallery]" href="{{pricture}}"><img id="image" src="{{picture}}" title="{{product_name}}" alt="{{product_name}}" /></a>
+      </div>
+      <div id="product_info" class="grid_4">
+        <p class="s_price">{{price}}</p>
+        <dl class="clearfix">
+			{% for property in product_properties %}
+          <dt>{{property.key}}</dt>
+          <dd>{{property.value}}</dd>
+			{% endfor %}
+        </dl>
+      	<p class="s_short_desc">{{short_description}}</p>
+       
+      </div>
+      
+      <div class="clear"></div>
+      <div class="s_tabs grid_12 alpha omega">
+        <ul class="s_tabs_nav clearfix">
+          <li><a href="#product_description">Description</a></li>
+        </ul>
+        <div class="s_tab_box">
+        
+          <div id="product_description">
+            <div class="cpt_product_description ">
+             {{ description }}
+            </div>
+            <!-- cpt_container_end -->
+          </div>
+      </div>
+      
+      <div id="related_products" class="grid_12 alpha omega">
+        <h2 class="s_title_1"><span class="s_main_color">Related</span> Products</h2>
+        <div class="clear"></div>
+        <div class="s_grid_view s_listing clearfix">
+          <div class="s_item grid_3">
+				{%for similar in similar_products%}
+          	<a class="s_thumb" href="{{similar.uri}}"><img src="{{similar.picture}}" title="{{similar.name}}" alt="{{similar.name}}" /></a>
+            <h3><a href="{{similar.uri}}">{{similar.name}}</a></h3>
+            <p class="s_model">{{similar.name}}</p>
+            <p class="s_price">{{similar.price}}</p>
+            
+          </div>
+          {%endfor%}
+          </div>
+          <div class="clear"></div>
+        </div>
+      </div>
+      
+      
+      </div>
+      
+      <div id="product_tags" class="grid_12 alpha omega">
+        <h2 class="s_title_1"><span class="s_main_color">Product</span> Tags</h2>
+        <div class="clear"></div>
+        <ul class="clearfix">
+          <li>{%for category in product_categories%}</li>
+          <li><a href="category.uri">{{category.name}}</a></li>
+			{%endfor%}
+        </ul>
+      </div>
+      
+    </div>
+
+  </div>
+{% endblock %}
+  <!-- end of content -->
+  
+  
+  
+  
+  
+  
